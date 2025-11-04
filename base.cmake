@@ -7,6 +7,7 @@ FIND_PROGRAM(MOLD_PATH mold)
 IF(EXISTS ${MOLD_PATH})
     MESSAGE(STATUS "mold found at: ${MOLD_PATH}")
     SET(CMAKE_LINKER_TYPE MOLD)
+    SET(CMAKE_LINKER ${MOLD_PATH})
 ELSE()
     MESSAGE(STATUS "mold not found")
 ENDIF()
@@ -25,7 +26,6 @@ SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 INCLUDE(FetchContent)
 FetchContent_Declare(
   googletest
-  #URL https://github.com/google/googletest/releases/download/v1.17.0/googletest-1.17.0.tar.gz
   URL https://github.com/google/googletest/archive/refs/tags/v1.17.0.tar.gz
 )
 # For Windows: Prevent overriding the parent project's compiler/linker settings

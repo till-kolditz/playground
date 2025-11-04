@@ -1,0 +1,8 @@
+Diagnostics:
+  ClangTidy:
+    FastCheckFilter: None
+  MissingIncludes: Strict
+
+CompileFlags:
+  CompilationDatabase:
+    ./

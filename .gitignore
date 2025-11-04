@@ -41,4 +41,8 @@
 *.dwo
 
 # custom files
-**/build-*/
+/.cache
+**/build*
+**/.vscode
+**/Testing/
+/compile_commands.json

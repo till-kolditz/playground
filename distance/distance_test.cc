@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 
-#include "distance.hpp"
+#include <distance.hpp>
 
 const std::vector few_points = {1, 3, 6, 2, 8};
 const std::vector more_points = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 15};
