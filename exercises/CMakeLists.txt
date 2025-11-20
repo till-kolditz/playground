@@ -6,3 +6,4 @@ SET(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 ADD_EXECUTABLE(hardware_concurrency hardware_concurrency.cc)
+ADD_EXECUTABLE(hardware_interference_size hardware_interference_size.cc)
