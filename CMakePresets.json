@@ -1,0 +1,67 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 28,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "displayName": "base configuration",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "-Wno-error=unused-command-line-argument"
+      }
+    },
+    {
+      "inherits": "base",
+      "name": "release",
+      "hidden": false,
+      "displayName": "Release",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "inherits": "base",
+      "name": "debug",
+      "hidden": false,
+      "displayName": "Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "release",
+      "hidden": false,
+      "displayName": "Release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "debug",
+      "hidden": false,
+      "displayName": "Debug",
+      "configurePreset": "debug"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "release",
+      "hidden": false,
+      "displayName": "Release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "debug",
+      "hidden": false,
+      "displayName": "Debug",
+      "configurePreset": "debug"
+    }
+  ]
+}

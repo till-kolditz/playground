@@ -1,9 +1,11 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 3.28)
+CMAKE_MINIMUM_REQUIRED(VERSION 4.0.0)
 
-PROJECT(Exercises)
+PROJECT(
+  Exercises
+  LANGUAGES CXX
+)
 
-SET(CMAKE_CXX_STANDARD 20)
-SET(CMAKE_CXX_STANDARD_REQUIRED ON)
+INCLUDE(../cmake/base.cmake)
 
 ADD_EXECUTABLE(hardware_concurrency hardware_concurrency.cc)
 ADD_EXECUTABLE(hardware_interference_size hardware_interference_size.cc)
