@@ -9,6 +9,7 @@ INCLUDE(../cmake/base.cmake)
 
 ADD_EXECUTABLE(hardware_concurrency hardware_concurrency.cc)
 ADD_EXECUTABLE(hardware_interference_size hardware_interference_size.cc)
+ADD_EXECUTABLE(stream_redirect stream_redirect.cc)
 
 INCLUDE(FetchContent)
 FetchContent_Declare(
