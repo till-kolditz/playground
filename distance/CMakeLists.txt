@@ -1,6 +1,9 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 4.0.0)
 
-PROJECT(Distance)
+PROJECT(
+  Distance
+  LANGUAGES CXX
+)
 
 INCLUDE(../cmake/base.cmake)
 
