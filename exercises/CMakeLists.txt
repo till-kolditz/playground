@@ -10,7 +10,13 @@ INCLUDE(../cmake/base.cmake)
 ADD_EXECUTABLE(hardware_concurrency hardware_concurrency.cc)
 ADD_EXECUTABLE(hardware_interference_size hardware_interference_size.cc)
 ADD_EXECUTABLE(stream_redirect stream_redirect.cc)
-ADD_EXECUTABLE(concurrent_cache concurrent_cache.cc)
+ADD_EXECUTABLE(lru_cache lru_cache.cc)
+
+ADD_EXECUTABLE(lru_cache_test lru_cache_test.cc)
+TARGET_LINK_LIBRARIES(lru_cache_test GTest::gtest_main)
+
+ADD_EXECUTABLE(lru_cache_bench lru_cache_bench.cc)
+TARGET_LINK_LIBRARIES(lru_cache_bench benchmark)
 
 INCLUDE(FetchContent)
 FetchContent_Declare(
