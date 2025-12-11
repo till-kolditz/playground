@@ -6,6 +6,7 @@
 
 #include <benchmark/benchmark.h>
 
+#include "concurrent_lru_cache_parallel.hpp"
 #include "concurrent_lru_cache_serialized.hpp"
 
 template <template <typename, typename> typename CacheType, typename Key = int,
@@ -58,6 +59,29 @@ static void BM_ConcurrentLRUCacheSerializedList(benchmark::State &state) {
   ReadOnly<ConcurrentLRUCacheSerializedList>(state);
 }
 BENCHMARK(BM_ConcurrentLRUCacheSerializedList)
+    ->Args({1'000, 1, 1'000'000})
+    ->Args({10'000, 1, 1'000'000})
+    ->Args({100'000, 1, 1'000'000})
+    ->Args({1'000, 10, 1'000'000})
+    ->Args({10'000, 10, 1'000'000})
+    ->Args({100'000, 10, 1'000'000});
+
+static void
+BM_ConcurrentLRUCacheParallelReadMemoryOptimized(benchmark::State &state) {
+  ReadOnly<ConcurrentLRUCacheParallelReadMemoryOptimized>(state);
+}
+BENCHMARK(BM_ConcurrentLRUCacheParallelReadMemoryOptimized)
+    ->Args({1'000, 1, 1'000'000})
+    ->Args({10'000, 1, 1'000'000})
+    ->Args({100'000, 1, 1'000'000})
+    ->Args({1'000, 10, 1'000'000})
+    ->Args({10'000, 10, 1'000'000})
+    ->Args({100'000, 10, 1'000'000});
+
+static void BM_ConcurrentLRUCacheParallelReadList(benchmark::State &state) {
+  ReadOnly<ConcurrentLRUCacheParallelReadList>(state);
+}
+BENCHMARK(BM_ConcurrentLRUCacheParallelReadList)
     ->Args({1'000, 1, 1'000'000})
     ->Args({10'000, 1, 1'000'000})
     ->Args({100'000, 1, 1'000'000})

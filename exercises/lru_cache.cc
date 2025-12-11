@@ -9,6 +9,7 @@
 #include <utility>
 #include <vector>
 
+#include "concurrent_lru_cache_parallel.hpp"
 #include "concurrent_lru_cache_serialized.hpp"
 #include "lru_cache.hpp"
 
@@ -190,6 +191,10 @@ int main() {
       "ConcurrentLRUCacheSerializedMemoryOptimized", kOutputFormat);
   RunCacheBenchmarkCases<ConcurrentLRUCacheSerializedList>(
       "ConcurrentLRUCacheSerializedList", kOutputFormat);
+  RunCacheBenchmarkCases<ConcurrentLRUCacheParallelReadMemoryOptimized>(
+      "ConcurrentLRUCacheParallelReadMemoryOptimized", kOutputFormat);
+  RunCacheBenchmarkCases<ConcurrentLRUCacheParallelReadList>(
+      "ConcurrentLRUCacheParallelReadList", kOutputFormat);
 
   WriteOutputFooter();
   return 0;
