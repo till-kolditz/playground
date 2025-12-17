@@ -13,6 +13,10 @@ ADD_EXECUTABLE(stream_redirect stream_redirect.cc)
 ADD_EXECUTABLE(lru_cache lru_cache.cc)
 ADD_EXECUTABLE(word_frequencies word_frequencies.cc)
 
+ADD_EXECUTABLE(generator generator.cc)
+ADD_EXECUTABLE(generator_test generator_test.cc)
+TARGET_LINK_LIBRARIES(generator_test GTest::gtest_main)
+
 ADD_EXECUTABLE(lru_cache_test lru_cache_test.cc)
 TARGET_LINK_LIBRARIES(lru_cache_test GTest::gtest_main)
 
